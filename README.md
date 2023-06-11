@@ -80,4 +80,29 @@ Follow the steps below to set up a Compose Multiplatform project in Android Stud
           ```
 
 7. **Sync the Project**
-    - If everything went well, you shouldn't have any errors. Now you can create Composables in your shared module and share them between Android and iOS.
+    - If everything went well, you shouldn't have any errors. 
+
+8. **Fix build errors**
+
+To fix this type of error
+
+```kotlin
+java.lang.IllegalStateException: e: Could not find "/Users/samsad/Desktop/Kotlin/ComposeDaily/CompoMultiCounter/shared/build/kotlinTransformedMetadataLibraries/commonMain/org.jetbrains.kotlinx-atomicfu-0.17.3-nativeInterop-8G5yng.klib" in [/Users/samsad/Library/Application Support/kotlin/daemon]
+at org.jetbrains.kotlin.library.SingleFileResolveKt$resolveSingleFileKlib$1.fatal(SingleFileResolve.kt:21)
+```
+
+you need to add `AtomicFu` gradle plugin in your project `build.gradle.kts` file
+```kotlin
+buildscript {
+    dependencies {
+        // Use the same version in the error
+        classpath("org.jetbrains.kotlinx:atomicfu-gradle-plugin:0.17.3")
+    }
+}
+
+allprojects {
+    apply(plugin = "kotlinx-atomicfu")
+}
+``` 
+
+### Now you can create Composables in your shared module and share them between Android and iOS.

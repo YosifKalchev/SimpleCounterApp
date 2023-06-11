@@ -3,7 +3,7 @@
 Follow the steps below to set up a Compose Multiplatform project in Android Studio.
 
 ## Prerequisites
-- Make sure you can create normal Kotlin Multiplatform Mobile (KMM) projects in Android Studio. If not, watch this [video tutorial](https://youtu.be/7Wl-G8aXxDA) to learn how to set it up.
+- Make sure you can create normal Kotlin Multiplatform Mobile (KMM) projects in Android Studio.
 
 ## Steps
 
